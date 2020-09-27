@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
 import { withFirebase } from '../Firebase';
+import { ListGroup } from 'react-bootstrap';
 
 class AdminPage extends Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class AdminPage extends Component {
     const { users, loading } = this.state;
     return (
       <div>
-        <h1>Admin</h1>
+        <h2>Admin</h2>
         {loading && <div>Loading ...</div>}
 
         <UserList users={users} />
@@ -48,21 +48,22 @@ class AdminPage extends Component {
 }
 
 const UserList = ({ users }) => (
-  <ul>
+  <ListGroup style={{ padding: 50 }}>
     {users.map((user) => (
-      <li key={user.uid}>
-        <span>
+      <ListGroup.Item>
+        key={user.uid}{' '}
+        <span style={{ paddingLeft: 20 }}>
           <strong>ID:</strong> {user.uid}
         </span>
-        <span>
+        <span style={{ paddingLeft: 20 }}>
           <strong>E-Mail:</strong> {user.email}
         </span>
-        <span>
+        <span style={{ paddingLeft: 20 }}>
           <strong>Username:</strong> {user.username}
         </span>
-      </li>
+      </ListGroup.Item>
     ))}
-  </ul>
+  </ListGroup>
 );
 
 export default withFirebase(AdminPage);

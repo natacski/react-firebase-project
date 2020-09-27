@@ -1,31 +1,19 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .landingPage {
-  background: url('./images/forecast2.png');
+  background: url('./images/9.png');
   background-size: cover;
-  margin-top: 0;
+  margin-top: -33px;
   padding: 20px 70px;
   text-align: center;
-  
 }
 
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding-left: 20px;
   overflow: hidden;
   background: #333;
 }
@@ -43,17 +31,20 @@ li a {
 }
 
 li a:hover {
-  background-color: #004F98;
+  background-color: #004f98;
+  color: white;
 }
 
 h1 {
-  color: #FFD700;
+  color: #ffd700;
   text-shadow: 2px 2px 5px black;
   text-align: center;
   padding: 20px 70px;
+  font-weight: bold;
 }
+
 h2 {
-  color: #004F98;
+  color: #004f98;
   text-align: center;
 }
 
@@ -61,7 +52,8 @@ p {
   color: white;
 }
 
-input[type=text], input[type=password] {
+input[type='text'],
+input[type='password'] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -71,19 +63,18 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
-button[type=submit], button[type=button] {
-  width: 100%;
-  background-color: #004F98;
+.mainButtonStyle {
+  background-color: #004f98;
   color: white;
-  padding: 14px 20px;
+  padding: 8px 15px;
   margin: 8px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-button[type=submit]:hover {
-  background-color: gray;
+.mainButtonStyle:hover {
+  background-color: #4c516d;
 }
 .formStyle {
   border-radius: 5px;
@@ -94,9 +85,24 @@ button[type=submit]:hover {
 
 .linkStyle {
   color: white;
+  font-weight: bold;
+}
+.linkStyle:hover {
+  color: #ffd700;
+  font-weight: bold; 
 }
 .banner {
-  background: url('./images/forecast.png');
-  width: 100%;
-  height: 500px;
+  background: url('./images/10.png');
+  text-align: center;
+  margin-top: -33px;
+  background-size: cover;
+  padding: 50px 0;
+}
+h6 {
+  text-align: right;
+  margin-right: 40px;
+}
+h3 {
+  padding-top: 30px;
+  text-align: center;
 }

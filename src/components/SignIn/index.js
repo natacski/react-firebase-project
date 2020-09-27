@@ -54,7 +54,7 @@ class SignInFormBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit} className="formStyle">
-      <h2>Sign In</h2>
+        <h2>Sign In</h2>
         <input
           name="email"
           value={email}
@@ -69,16 +69,18 @@ class SignInFormBase extends Component {
           type="password"
           placeholder="Password"
         />
-        <button disabled={isInvalid} type="submit">
+        <button
+          className="mainButtonStyle"
+          disabled={isInvalid}
+          type="submit"
+        >
           Sign In
         </button>
 
-        {error && <p>{error.message}</p>}
+        {error && <p style={{color: 'black'}}>{error.message}</p>}
       </form>
-      
     );
-   }
-   
+  }
 }
 
 const SignInForm = compose(withRouter, withFirebase)(SignInFormBase);

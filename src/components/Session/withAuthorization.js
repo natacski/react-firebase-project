@@ -11,14 +11,20 @@ const withAuthorization = (condition) => (Component) => {
       this.listener = this.props.firebase.auth.onAuthStateChanged(
         (authUser) => {
           if (!condition(authUser)) {
-            this.props.history.push(ROUTES.SIGN_IN);
+            this.props.history.push(ROUTES.LANDING);
           }
         },
       );
     }
 
     componentWillUnmount() {
-      this.listener();
+      this.listener = this.props.firebase.auth.onAuthStateChanged(
+        (authUser) => {
+          if (!condition(authUser)) {
+            this.props.history.push(ROUTES.LANDING);
+          }
+        },
+      );
     }
 
     render() {

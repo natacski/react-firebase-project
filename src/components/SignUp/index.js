@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { withFirebase } from '../Firebase';
-
 import * as ROUTES from '../../constants/routes';
 
 const SignUpPage = () => (
@@ -73,7 +72,7 @@ class SignUpFormBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit} className="formStyle">
-         <h2>Sign Up</h2>
+        <h2>Sign Up</h2>
         <input
           name="username"
           value={username}
@@ -111,11 +110,15 @@ class SignUpFormBase extends Component {
           inputmode="numeric"
           pattern="^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$"
         />
-        <button disabled={isInvalid} type="submit">
+        <button
+          className="mainButtonStyle"
+          disabled={isInvalid}
+          type="submit"
+        >
           Sign Up
         </button>
 
-        {error && <p>{error.message}</p>}
+        {error && <p style={{color: 'black'}}>{error.message}</p>}
       </form>
     );
   }
@@ -123,7 +126,10 @@ class SignUpFormBase extends Component {
 
 const SignUpLink = () => (
   <p>
-    Don't have an account? <Link to={ROUTES.SIGN_UP} className="linkStyle">Sign Up</Link>
+    Don't have an account?{' '}
+    <Link to={ROUTES.SIGN_UP} className="linkStyle">
+      Sign Up
+    </Link>
   </p>
 );
 
