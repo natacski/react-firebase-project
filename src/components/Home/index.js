@@ -55,7 +55,7 @@ const HomePage = (props) => {
    */
   const getWeatherData = async (zipCode) => {
     const response = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&units=imperial&appid=d8273ff3fb899f65070a8154465cb75d`,
+      `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&units=imperial&appid=d8273ff3fb899f65070a8154465cb75d`,
     );
     const weatherData = await response.json();
     return weatherData;
@@ -87,7 +87,7 @@ const HomePage = (props) => {
 
   const iconUrl =
     weatherInfo.weather &&
-    'http://openweathermap.org/img/wn/' +
+    'https://openweathermap.org/img/wn/' +
       weatherInfo.weather[0].icon +
       '@2x.png';
 
